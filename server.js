@@ -32,7 +32,7 @@ app.get('/', (req, res) => res.status(200).send("Hello Groot"));
 app.get('/v1/posts', (req, res) => res.status(200).send(data));
 
 app.get('/v2/posts', (req, res) => {
-    Videos.find((err, data) => {
+    Videos.find({}, (err, data) => {
         if (err) {
             res.status(500).send(err);
         } else {
